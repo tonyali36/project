@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr> <th>Id</th><th>Nom</th> <th>Reference</th> <th>Description</th> <th></th> <th></th> </tr>
+                </thead>
+                <tbody *ngFor="let produit of produits">
+                    <tr>
+                        <td>{{produit.idArticle}}</td>
+                        <td>{{produit.nomArticle}}</td>
+                        <td>{{produit.referenceArticle}}</td>
+                        <td>{{produit.descriptionArticle}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateProduit',produit.idArticle]">Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
